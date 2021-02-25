@@ -1,5 +1,7 @@
 jest.mock('../../messanger');
 
+/* eslint-disable no-import-assign */
+
 import * as messanger from '../../messanger';
 import AbstractAction from '../AbstractAction';
 
@@ -244,10 +246,7 @@ describe('AbstractAction', () => {
         let instance = {
             browser: 'browser',
             page: {
-                url: jest
-                    .fn()
-                    .mockReturnValueOnce('afterUrl')
-                    .mockReturnValue('url'),
+                url: jest.fn().mockReturnValueOnce('afterUrl').mockReturnValue('url'),
                 waitFor: jest.fn().mockReturnValue(Promise.resolve()),
                 goBack: jest.fn().mockReturnValue(Promise.resolve()),
                 bringToFront: jest.fn().mockReturnValue(Promise.resolve()),
@@ -383,7 +382,7 @@ describe('AbstractAction', () => {
             getElementSelector: jest.fn().mockReturnValue(Promise.resolve(selector)),
             getElementHTML: jest.fn().mockReturnValue(Promise.resolve(html)),
         };
-        action.updateResults = jest.fn(results => Promise.resolve(results));
+        action.updateResults = jest.fn((results) => Promise.resolve(results));
         action._results = {};
 
         await action._logInfo(element);

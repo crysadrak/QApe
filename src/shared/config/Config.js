@@ -16,7 +16,7 @@ export default class Config {
             userConfig = require(path.join(process.cwd(), userConfig));
         }
 
-        Object.keys(template).forEach(key => (config[key] = template[key].value));
+        Object.keys(template).forEach((key) => (config[key] = template[key].value));
 
         Object.assign(config, userConfig);
 

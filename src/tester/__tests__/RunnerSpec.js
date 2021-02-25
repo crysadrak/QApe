@@ -5,6 +5,8 @@ jest.mock('../../shared/config/Config');
 jest.mock('../messanger');
 jest.mock('fs');
 
+/* eslint-disable no-import-assign */
+
 import Runner from '../Runner';
 import Browser from '../browser/Browser';
 import ScenariosHandler from '../scenarios/ScenariosHandler';
@@ -17,9 +19,9 @@ describe('Runner', () => {
     let runner = null;
 
     beforeEach(() => {
-        messanger.requestScenario = jest.fn().mockReturnValue(Promise.resolve());
-        messanger.sendScenario = jest.fn();
-        messanger.report = jest.fn();
+        messanger.requestScenario = jest.fn().mockReturnValue(Promise.resolve()); // eslint-disable-line no-import-assign
+        messanger.sendScenario = jest.fn(); // eslint-disable-line no-import-assign
+        messanger.report = jest.fn(); // eslint-disable-line no-import-assign
         runner = new Runner({});
         console.error = jest.fn();
     });

@@ -1,5 +1,5 @@
 module.exports = {
-  'extends': ['eslint:recommended', 'plugin:react/recommended', 'prettier', 'prettier/react'],
+  'extends': ['eslint:recommended', 'prettier'],
   'parser': 'babel-eslint',
   'rules': {
     'prettier/prettier': [
@@ -14,30 +14,18 @@ module.exports = {
     ],
 
     'no-console': 0,
-
-    'react/prop-types': 0,
-    'react/wrap-multilines': 0,
-    'react/display-name': 0,
   },
   'plugins': [
     'prettier',
     'jest',
-    'react',
     'jasmine'
   ],
   'settings': {
     'ecmascript': 2015,
-    'jsx': true,
-    'react': {
-      version: '16'
-    }
   },
   'parserOptions': {
     'sourceType': 'module',
     'ecmaVersion': 6,
-    'ecmaFeatures': {
-      'jsx': true
-    }
   },
   'env': {
     'browser': true,
@@ -46,9 +34,4 @@ module.exports = {
     'jasmine': true,
     'jest/globals': true
   },
-  'globals': {
-    '$Debug': true,
-    '$IMA': true,
-    'jsdom': true
-  }
 };

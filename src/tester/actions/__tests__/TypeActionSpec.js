@@ -13,7 +13,7 @@ describe('TypeAction', () => {
 
     it('can check if a type action is available', () => {
         let context = {
-            evaluate: jest.fn(fn => fn(element)),
+            evaluate: jest.fn((fn) => fn(element)),
         };
         let executionContext = jest.fn().mockReturnValue(context);
         let element = {

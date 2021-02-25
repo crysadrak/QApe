@@ -1,3 +1,5 @@
+/* eslint-disable no-import-assign */
+
 import * as messanger from '../../messanger';
 import RandomScenarios from '../RandomScenarios';
 
@@ -77,10 +79,7 @@ describe('RandomScenarios', () => {
             afterScenarioScript: jest.fn().mockReturnValue(Promise.resolve()),
         };
         scenarios._actionsHandler = {
-            execute: jest
-                .fn()
-                .mockReturnValueOnce(scenario[0])
-                .mockReturnValue(scenario[1]),
+            execute: jest.fn().mockReturnValueOnce(scenario[0]).mockReturnValue(scenario[1]),
         };
 
         let results = await scenarios._performActions(instance);

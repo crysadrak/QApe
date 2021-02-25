@@ -50,9 +50,9 @@ export default class ActionsHelper {
         let allElements = await page.$x(this._config.elementSelector);
 
         await Promise.all(
-            allElements.map(async element => {
+            allElements.map(async (element) => {
                 let executionContext = await element.executionContext();
-                let numberOfChildren = await executionContext.evaluate(element => {
+                let numberOfChildren = await executionContext.evaluate((element) => {
                     return element && element.childElementCount;
                 }, element);
 
@@ -128,7 +128,7 @@ export default class ActionsHelper {
     async getElementHTML(element) {
         let executionContext = await element.executionContext();
 
-        return executionContext.evaluate(element => element.outerHTML, element);
+        return executionContext.evaluate((element) => element.outerHTML, element);
     }
 
     /**

@@ -22,7 +22,7 @@ export default class TypeAction extends AbstractAction {
      * @returns {boolean}
      */
     static isActionAvailable(element) {
-        return element.executionContext().evaluate(element => {
+        return element.executionContext().evaluate((element) => {
             return element.matches(
                 // Is typable input box
                 'input' +

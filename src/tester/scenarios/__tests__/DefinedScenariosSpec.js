@@ -1,5 +1,7 @@
 jest.mock('../../messanger');
 
+/* eslint-disable no-import-assign */
+
 import * as messanger from '../../messanger';
 import DefinedScenarios from '../DefinedScenarios';
 

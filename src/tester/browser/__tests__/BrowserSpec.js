@@ -1,5 +1,7 @@
 jest.mock('../../messanger');
 
+/* eslint-disable no-import-assign */
+
 import Browser from '../Browser';
 import * as messanger from '../../messanger';
 
